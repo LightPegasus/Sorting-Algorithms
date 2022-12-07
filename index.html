@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sorting Algorithm</title>
+        <link rel="stylesheet" href="stylesheet.css" />
+        <script src="algorithms.js"></script>
+        <script defer src="index.js"></script>
+    </head>
+    <body>
+        <h1>Sorting Algorithm</h1>
+        <div class="barbox" id="barbox"></div>
+        <div class="options">
+            <label for="algos">Algorithm:</label>
+            <select name="algos" id="algos">
+                <option value="bubble">Bubble Sort</option>
+                <option value="insertion">Insertion Sort</option>
+                <option value="selection">Selection Sort</option>
+                <option value="quick">Quick Sort</option>
+                <option value="merge">Merge Sort</option>
+            </select>
+            <button onclick="start()">Start</button>
+            <button onclick="generate()">Generate button</button>
+            <label>Size of array:</label>
+            <input
+                type="range"
+                min="1"
+                max="200"
+                value="12"
+                oninput="rangeValue.innerText = this.value"
+            />
+            <label id="rangeValue">12</label>
+        </div>
+    </body>
+</html>

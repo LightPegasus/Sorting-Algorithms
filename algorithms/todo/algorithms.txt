@@ -1,0 +1,11 @@
+shell
+radix
+gnome
+shaker
+odd even
+pancake
+bitonic
+comb
+bogo
+stooge
+heap
