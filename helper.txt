@@ -9,3 +9,11 @@
     background: #d3d3d3; /* Grey background */
     outline: none;
 }
+
+
+https://github.com/mahfuzrifat7/SortingVisualizer?tab=readme-ov-file
+https://github.com/AbdallahHemdan/Sorting-Visualizer
+https://github.com/polcats/VisualSort/tree/master/script
+https://github.com/im-kaushal/SortingAlgo
+https://github.com/arefmalek/Sorting_Visualizer
+https://github.com/7645re/SortingVisualization
