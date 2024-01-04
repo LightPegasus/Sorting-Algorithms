@@ -4,38 +4,39 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sorting Algorithm</title>
         <link rel="stylesheet" href="stylesheet.css" />
-        <script defer src="index.js"></script>
-        <script defer src="algorithms/bubble.js"></script>
-        <script defer src="algorithms/insertion.js"></script>
-        <script defer src="algorithms/selection.js"></script>
-        <script defer src="algorithms/merge.js"></script>
-        <script defer src="algorithms/quick.js"></script>
+        <title>Sorting Algorithm</title>
     </head>
     <body>
-        <h1>Sorting Algorithm</h1>
-        <div class="barbox" id="barbox"></div>
-        <div class="options">
-            <label for="algos">Algorithm:</label>
-            <select name="algos" id="algos">
-                <option value="bubble">Bubble Sort</option>
-                <option value="insertion">Insertion Sort</option>
-                <option value="selection">Selection Sort</option>
-                <option value="quick">Quick Sort</option>
-                <option value="merge">Merge Sort</option>
-            </select>
-            <button onclick="start()">Start</button>
-            <button onclick="generate()">Generate button</button>
-            <label>Size of array:</label>
-            <input
-                type="range"
-                min="1"
-                max="200"
-                value="12"
-                oninput="rangeValue.innerText = this.value"
-            />
-            <label id="rangeValue">12</label>
+        <div class="workflow">
+            <div class="box"></div>
+            <div class="controlPanel">
+                <p class="sliderCountNumberIndicator">Count of number number: 500</p>
+                <input class="sliderCountNumber" type="range" min="1" max="1000" value="500">
+                <p class="sliderIterationDelayIndicator">Iteration delay: 2</p>
+                <input class="sliderIterationDelay" type="range" min="2" max="100" value="2">
+                <div style="margin: 5px;">
+                <label for="sorts">Choose a sorting algorithm:</label>
+                    <select name="sorts" class="sortAlgorithm">
+                        <option value="bubbleSort">Bubble Sort</option>
+                        <option value="insertionSort">Insertion Sort</option>
+                        <option value="selectionSort">Selection Sort</option>
+                        <option value="mergeSort">Merge Sort</option>
+                        <option value="quickSort">Quick Sort</option>
+                    </select>
+                    <button class="buttonStartSort">Sort</button>
+                </div>
+            </div>
         </div>
     </body>
+    
+    <!-- Load all the JavaScript files -->
+    <script src="scripts/base/index.js"></script>
+    <script src="scripts/base/bars.js"></script>
+    <script src="scripts/base/sound.js"></script>
+    <script src="scripts/algorithms/bubble.js"></script>
+    <script src="scripts/algorithms/insertion.js"></script>
+    <script src="scripts/algorithms/selection.js"></script>
+    <script src="scripts/algorithms/merge.js"></script>
+    <script src="scripts/algorithms/quick.js"></script>
 </html>
