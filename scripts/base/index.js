@@ -7,8 +7,9 @@ var sliderCountNumberIndicator = document.getElementsByClassName("sliderCountNum
 var sliderIterationDelayIndicator = document.getElementsByClassName("sliderIterationDelayIndicator")[0];
 var sortAlgorithm = document.getElementsByClassName("sortAlgorithm")[0];
 var buttonStartSort = document.getElementsByClassName("buttonStartSort")[0];
+var buttonRandomize = document.getElementsByClassName("buttonRandomize")[0];
 
-let frequency = 10 // control the hertz of the sorting sound
+let frequency = 0 // control the hertz of the sorting sound
 var context = new window.AudioContext();
 var display;
 
@@ -20,6 +21,7 @@ async function setStatusButtonSlides(status) {
     buttonStartSort.disabled = status;
     sliderCountNumber.disabled = status;
     sliderIterationDelay.disabled = status;
+    buttonRandomize.disabled = status;
 }
 
 // Change the visable value for the sliders
@@ -46,23 +48,27 @@ buttonStartSort.addEventListener("click", async function() {
                 await display.insertionSort()
                 break
             case ("selectionSort"):
-                // await display.selectionSort()
+                await display.selectionSort()
                 break
             case ("quickSort"):
-                // await display.quickSort()
+                await display.quickSort()
                 break
             case ("mergeSort"):
-                // await display.mergeSort()
+                await display.mergeSort()
                 break
         }
         setStatusButtonSlides(false);
     }
 });
 
+buttonRandomize.addEventListener("click", async function() {
+    display.fill(sliderCountNumber.value);
+})
+
 // delay function for animation
 async function delay(delayIter) {
     return new Promise(resolve => {
-        setTimeout(() => { resolve(2) }, delayIter);
+        setTimeout(() => { resolve(10) }, delayIter);
     })
 }
 

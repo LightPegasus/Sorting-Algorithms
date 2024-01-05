@@ -1,22 +1,42 @@
-function quickSort(array, start, end) {
-    if (start === undefined) {
-        start = 0;
-        end = array.length - 1;
-    } else if (start >= end) {
-        return array;
-    }
-    var rStart = start,
-        rEnd = end;
-    var pivot = array[Math.floor(Math.random() * (end - start + 1) + start)];
-    while (start < end) {
-        while (array[start] <= pivot) start++;
-        while (array[end] > pivot) end--;
-        if (start < end) {
-            var temp = array[start];
-            array[start] = array[end];
-            array[end] = temp;
+async function swap(arr, leftIndex, rightIndex) {
+    let temp = arr[leftIndex]
+    arr[leftIndex] = arr[rightIndex]
+    arr[rightIndex] = temp
+}
+
+async function partition(arr, left, right) {
+    // We take the middle element as the pivot of the arr in the interval (left, right)
+    let pivot = arr[Math.floor((left + right) / 2)]
+    let i = left
+    let j = right
+    while (i <= j) {
+        while (arr[i] < pivot) i++
+        while (arr[j] > pivot) j--
+        if (i <= j) {
+            await swap(arr, i, j)
+            await display.swap(i, j)
+            await display.paintBar(i, display.colorBarSelect)
+            await display.paintBar(j, display.colorBarSelect)
+            await playSound(frequency * i)
+            await delay(display.iterationDelay)
+            await display.paintBar(j, display.colorBarDefault)
+            await display.paintBar(i, display.colorBarDefault)
+            i++
+            j--
         }
     }
-    quickSort(array, rStart, start - 1);
-    quickSort(array, start, rEnd);
+    return i
+}
+
+async function quickSort(arr, left, right) {
+    if (left === undefined) {
+        left = 0;
+        right = arr.length - 1;
+    } else if (left >= right) {
+        return arr;
+    }
+    let pivot // index of pivot element
+    pivot = await partition(arr, left, right);
+    if (left < pivot - 1) await quickSort(arr, left, pivot - 1);
+    if (pivot < right) await quickSort(arr, pivot, right);
 }

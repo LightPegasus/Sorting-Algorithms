@@ -10,9 +10,9 @@ async function insertionSort(arr) {
             arr[j + 1] = arr[j];
             display.paintBar(j + 1, display.colorBarSelect);
             display.paintBar(j, display.colorBarSelect);
-            await display.swap(j + 1, j)
+            await display.swap(j + 1, j);
             playSound(frequency * j);
-            await delay(display.iterationDelay)
+            await delay(display.iterationDelay);
             display.paintBar(j + 1, display.colorBarDefault);
             display.paintBar(j, display.colorBarDefault);
             j--;

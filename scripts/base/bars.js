@@ -20,6 +20,7 @@ class Display {
         this.maxValue = maxValue;
         this.isSorted = false;
         this.iterationDelay = iterationDelay;
+        this.coverageInterval = true;
         this.div = document.getElementsByClassName("box")[0];
         this.colorBarSelect = colorBarSelect;
         this.colorBarDefault = colorBarDefault;
@@ -89,8 +90,17 @@ class Display {
         await insertionSort(this.array);
         this.isSorted = true;
     }
-    async selectionSort() {}
-    async mergeSort() {}
-    async quickSort() {}
+    async selectionSort() {
+        await selectionSort(this.array);
+        this.isSorted = true;
+    }
+    async quickSort() {
+        await quickSort(this.array);
+        this.isSorted = true;
+    }
+    async mergeSort() {
+        await mergeSort(this.array);
+        this.isSorted = true;
+    }
 
 }

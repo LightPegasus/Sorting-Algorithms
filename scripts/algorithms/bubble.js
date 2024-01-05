@@ -6,11 +6,11 @@ async function bubbleSort(arr) {
             display.paintBar(j+1, display.colorBarSelect);
             display.paintBar(j, display.colorBarSelect);
             if (arr[j] > arr[j + 1]) {
-                await display.swap(j, j+1)
+                await display.swap(j, j+1);
                 playSound(frequency * j);
                 [arr[j], arr[j + 1]] = [arr[j+1], arr[j]];
             }
-            await delay(display.iterationDelay)
+            await delay(display.iterationDelay);
             display.paintBar(j+1, display.colorBarDefault);
             display.paintBar(j, display.colorBarDefault);
         }
