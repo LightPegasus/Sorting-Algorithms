@@ -23,6 +23,9 @@ A program that solves an array of numbers using a variety of sorting algorithms
 
 ### Source
 Links that have heavily influenced my knowledge and program.
+
 https://github.com/7645re/SortingVisualization
+
 https://www.geeksforgeeks.org/sorting-algorithms/#
+
 https://www.sortvisualizer.com/
