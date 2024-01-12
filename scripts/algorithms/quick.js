@@ -17,7 +17,7 @@ async function partition(arr, left, right) {
             await display.swap(i, j)
             await display.paintBar(i, display.colorBarSelect)
             await display.paintBar(j, display.colorBarSelect)
-            await playSound(frequency * i)
+            await playSound(frequency * i);
             await delay(display.iterationDelay)
             await display.paintBar(j, display.colorBarDefault)
             await display.paintBar(i, display.colorBarDefault)

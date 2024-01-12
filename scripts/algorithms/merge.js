@@ -20,16 +20,17 @@ async function merge(arr, start, mid, end)
                 await display.paintBar(index, display.colorBarSelect);
                 await display.changeBarHeight(index, arr[index - 1] / display.array.length * 100 );
                 arr[index] = arr[index - 1];
-                // playSound(frequency*index)
+                playSound(frequency*index);
                 await display.paintBar(index, display.colorBarDefault);
                 index--;
             }
             arr[start] = value;
             await display.paintBar(start, display.colorBarSelect);
             await display.changeBarHeight(index, value / display.array.length * 100);
-            // playSound(frequency*start)
+            playSound(frequency*start);
             await delay(display.iterationDelay);
             await display.paintBar(start, display.colorBarDefault);
+            
             // Update all the pointers
             start++;
             mid++;
